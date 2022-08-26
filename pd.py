@@ -9,7 +9,7 @@ if uploaded_files is not None:
         df1 = pd.read_excel(uploaded_file, sheet_name= "Sheet1")
         new1 = new1.append(df1, ignore_index = True)
         
-    st.write(new1)
+    st.table(new1)
 mergebtn = st.button("merge")
 if mergebtn :
     new1.to_excel("new_file.xlsx", sheet_name="Sheet1", index=False)
